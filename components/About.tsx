@@ -1,9 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion';
+import { PageInfo } from '../typings';
+import { urlFor } from '../sanity';
 
-type Props = {}
+type Props = { pageInfo: PageInfo; }
 
-export default function About({ }: Props) {
+export default function About({ pageInfo }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -24,7 +26,7 @@ export default function About({ }: Props) {
                 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                src="https://user-images.githubusercontent.com/87669361/205462037-a05b27a0-8031-40f5-a7fb-ee4c950506d8.jpg"
+                src={urlFor(pageInfo?.profilePic).url()}
                 className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
             />
 
@@ -35,12 +37,7 @@ export default function About({ }: Props) {
                     background
 
                     <p className='text-base pt-5 '>
-
-                        I'm Ashish. Here's a little bit about me...
-                        Currently, I'm in Third year of Computer Science Engineering with Iot, Cyber Security, Block Chain Technology at Chaitanya Bharathi Institute of Technology (CBIT).
-                        A passionate Full Stack Software Developer 🚀 having an experience of building Web2, Web3 and Mobile applications with JavaScript / Reactjs / Nodejs / Nextjs / React Native and some other cool libraries and frameworks.
-                        I love solving problems using programming and I'm very interested in Software Engineering, Web Development, Data Structures and Algorithms. I'm very proactive and I love teamwork. Be free to contact me :)
-
+                        {pageInfo.backgroundInformation}
                     </p>
                 </h4>
             </div>

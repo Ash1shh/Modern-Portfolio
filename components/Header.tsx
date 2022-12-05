@@ -3,14 +3,12 @@ import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Social } from '../typings';
-/*
+
 type Props = {
     socials: Social[];
 }
-{ socials }: Props
-*/
 
-export default function Header() {
+export default function Header({ socials }: Props) {
     return (
         <header className='sticky top-0 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center p-5'>
             <motion.div
@@ -30,34 +28,15 @@ export default function Header() {
 
                 className='flex flex-row items-center'>
                 {/*social icons*/}
-                {/*{socials.map((social) => (
+                {socials.map((social) => (
                     <SocialIcon
-                    key = {social.id}
+                    key = {social._id}
                     url = {social.url}
                     fgColor= "gray"
                     bgColor= "transparent"
                     />
-                ))}*/}
-                <SocialIcon
-                    url="https://github.com/Ash1shh"
-                    fgColor='gray'
-                    bgColor='transparent'
-                />
-                <SocialIcon
-                    url="https://www.youtube.com/@024ashish5"
-                    fgColor='gray'
-                    bgColor='transparent'
-                />
-                <SocialIcon
-                    url="https://www.instagram.com/_ashishchandra__/"
-                    fgColor='gray'
-                    bgColor='transparent'
-                />
-                <SocialIcon
-                    url="https://twitter.com/pluto0p"
-                    fgColor='gray'
-                    bgColor='transparent'
-                />
+                ))}
+
             </motion.div>
 
             <Link href='#contactme'>

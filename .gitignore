@@ -9,6 +9,7 @@
 /coverage
 
 #sanity
+#
 /sanity/node_modules
 
 # next.js
@@ -37,3 +38,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
