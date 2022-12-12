@@ -5,7 +5,7 @@ import { Experience } from '../typings';
 
 type Props = { experiences: Experience[]; }
 
-export default function WorkExperience({ experiences }: Props) {
+function WorkExperience({ experiences }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -19,10 +19,12 @@ export default function WorkExperience({ experiences }: Props) {
 
             <div className='flex w-full space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20  scrollbar-thumb-[#F7AB0A]/80'>
                 {/*ExperienceCard*/}
-                {experiences?.map(experience => (
-                    <ExperienceCard key={experience._id} experience = {experience} />
+                {experiences.map((experience) => (
+                    <ExperienceCard key={experience._id} experience={experience} />
                 ))}
             </div>
         </motion.div>
     )
 }
+
+export default WorkExperience;

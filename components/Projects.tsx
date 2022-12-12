@@ -1,3 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-key */
 import React from 'react'
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
@@ -46,7 +49,7 @@ export default function Projects({ projects }: Props) {
                             </h4>
 
                             <div className="flex items-center space-x-2 justify-center">
-                            {project?.technologies.map((technology) =>(
+                            {project?.technologies.map((technology: { _id: React.Key | null | undefined; image: any; }) =>(
                                 <img
                                 className="h-10 w-10"
                                 key={technology._id}
