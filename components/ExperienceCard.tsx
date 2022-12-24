@@ -12,7 +12,7 @@ type Props = {
 
 export default function ExperienceCard({ experience }: Props) {
     return (
-        <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] p-10 snap-center bg-[#292929] hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+        <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] p-10 snap-center bg-[#292929] hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden '>
             <motion.img
                 initial={{
                     y: -100,
@@ -29,9 +29,9 @@ export default function ExperienceCard({ experience }: Props) {
 
             <div className='px-0 md:px-10'>
                 <h4 className='text-4xl font-light'>{experience.jobTitle}</h4>
-                <p className='text-2xl fond-bold mt-2 ml-1'>HYDERABAD</p>
+                <p className='text-2xl fond-bold mt-1'>{experience.company}</p>
                 {/* Tech used */}
-                {/* <div className='flex space-x-2 my-2'>
+                <div className='flex space-x-2 my-2'>
 
                     {experience.technologies.map((technology) => (
                         <img
@@ -40,9 +40,9 @@ export default function ExperienceCard({ experience }: Props) {
                             src={urlFor(technology.image).url()}
                         />
                     ))}
-                </div> */}
+                </div>
 
-                <p className='uppercase pt-2 pb-5 text-gray-300'>
+                <p className='uppercase py-3 text-gray-300'>
 
                     {new Date(experience.dateStarted).toDateString()} -{" "}
                     {experience.isCurrentlyWorkingHere

@@ -72,7 +72,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
           <div className="flex items-center justify-center">
             <img
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src={urlFor(pageInfo?.heroImage).url()}
+              src="https://user-images.githubusercontent.com/87669361/205507193-155e23c6-d7e7-4d7e-bc0f-793c42fa9c36.jpg"
               alt=""
             />
           </div>
